@@ -39,8 +39,6 @@ UAS       : 80
 Folder `p02` di repository `pt-NPM` berisi `sinilai_v01.cpp`, dan  `README.md`. Lihat Modul Pertemuan 2 bagian E.
 
 ## Deklarasi AI
-
-Tuliskan AI yang digunakan, prompt, dan umpan balik AI
 chat gpt :**Prompt:** 
 "Jelaskan kenapa bagian kode compilernya juga  masih eror serta ."
 **Umpan balik:** 
