@@ -38,3 +38,7 @@ Folder `p01` di repository `pt-NPM` berisi `hello.cpp`, `rerata.cpp` hasil porti
 `catatan_kesalahan.md` (empat jenis kesalahan beserta pesan yang muncul). Lihat Modul Pertemuan 1
 bagian E.
 
+## Deklarasi AI
+** ChatGPT
+**Prompt:** "Jelaskan arti error compiler ini dan penyebabnya."
+**Umpan balik:** AI memberikan penjelasan tentang error dan bagian kode yang bermasalah. Saya memeriksa kembali dengan membaca modul dan mencoba program di VS Code.
