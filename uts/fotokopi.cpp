@@ -1,6 +1,3 @@
-// UTS Praktikum Paket B: Fotokopi Kampus.
-// Lengkapi TODO 1 sampai TODO 6 sesuai lembar soal. Bagian yang sudah ada jangan diubah kecuali diminta.
-// Bangun dengan baseline kelas; program harus bebas warning. Uji dengan: ./fotokopi < contoh_masukan.txt
 #include <cctype>
 #include <iomanip>
 #include <iostream>
@@ -46,7 +43,6 @@ int main() {
 
         cout << "\n--- Pesanan ke-" << i << " dari " << jumlah << " ---\n";
         // TODO 1: membaca dan memvalidasi nama pemesan
-        
     bool nama_sah = false;
     do {
         cout << "Nama pemesan : ";
@@ -77,7 +73,7 @@ int main() {
 
     bool awal_kata = true;
 
-    for (int j = 0; j < nama.length(); j++) {
+    for (size_t j = 0; j < nama.length(); j++) {
         if (isspace(nama[j])) {
             awal_kata = true;
         } else {
@@ -116,7 +112,7 @@ int main() {
         while (warna != 'Y' && warna != 'T') {
             cin.ignore(1000, '\n');
 
-            cout << "Pilihan tidak valid. Masukkan Y atau T: ";
+            cout << "Hanya Y atau T. Berwarna (Y/T): ";
             cin >> warna;
             warna = toupper(warna);
         }
@@ -141,27 +137,38 @@ int main() {
     if (warna == 'Y') {
     biaya *= 2;
     }
+    // Tampilkan detail pesanan
+    cout << "  " << left << setw(16) << nama << right << setw(6) << halaman;
+
+    if (warna == 'Y') {
+        cout << setw(7) << "Warna";
+    } else {
+        cout << setw(7) << "Hitam";
+    }
+
+    cout << setw(9) << biaya << "\n";
+
     total_halaman += halaman;
     total_pendapatan += biaya;
-        // TODO 5b: perbarui biaya terbesar dan nama pemesannya bila biaya ini lebih besar.
-    
+        
+    // TODO 5b: perbarui biaya terbesar dan nama pemesannya bila biaya ini lebih besar.
     if (biaya > biaya_terbesar) {
     biaya_terbesar = biaya;
     nama_terbesar = nama;
     }
+}
     cout << "\n=== Rekap Hari Ini ===\n";
     cout << "Jumlah pesanan    : " << jumlah << "\n";
     cout << "Total halaman     : " << total_halaman << "\n";
     cout << "Total pendapatan  : " << total_pendapatan << "\n";
     cout << "Rata-rata halaman : " << static_cast<double>(total_halaman) / jumlah << "\n";
+    
     // TODO 5c: cetak "Terbesar          : " diikuti nama dan biaya terbesar dalam kurung.
     cout << "Terbesar          : " << nama_terbesar
          << " (" << biaya_terbesar << ")\n";
     cout << "\nSebaran ukuran pesanan:\n";
-    // TODO 6: tiga baris batang (Kecil, Sedang, Besar) memakai perulangan bersarang:
-    //         perulangan luar memilih label dan jumlahnya, perulangan dalam mencetak tanda # sebanyak itu.
-    //         Format tiap baris: label rata kiri selebar 7, lalu "| ", batang, spasi, jumlah. Contoh: "Kecil  | ## 2"
     
+    // TODO 6: Tampilkan sebaran pesanan
     string label[3] = {"Kecil", "Sedang", "Besar"};
     int banyak[3] = {banyak_kecil, banyak_sedang, banyak_besar};
 
